@@ -100,7 +100,27 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    /* Add top padding to account for fixed navbar */
+    padding-top: 64px;
   }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Section helpers */
+.hm-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.service-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
 }
 
 /* Navbar active underline: when a link has aria-current="page" make the underline full width */
