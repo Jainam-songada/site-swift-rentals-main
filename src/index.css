@@ -9,6 +9,7 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Construction Industry Theme - Premium Bold Design */
+    /* Keep pure white backgrounds (as requested) and update theme colors below */
     --background: 0 0% 100%;
     --foreground: 0 0% 0%;
 
@@ -18,9 +19,9 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 0%;
 
-    /* Primary: Construction Yellow */
-    --primary: 47 100% 49%;
-    --primary-foreground: 0 0% 0%;
+    /* Primary: Construction Yellow (richer/golden) */
+    --primary: 42 96% 50%;
+    --primary-foreground: 210 12% 12%;
 
     /* Secondary: Dark Gray */
     --secondary: 0 0% 18%;
@@ -30,24 +31,24 @@ All colors MUST be HSL.
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 40%;
 
-    /* Accent: Bright Yellow */
-    --accent: 47 100% 49%;
-    --accent-foreground: 0 0% 0%;
+    /* Accent: Slightly lighter gold for highlights */
+    --accent: 42 95% 60%;
+    --accent-foreground: 210 12% 12%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 47 100% 49%;
+    --ring: 42 96% 50%;
 
     --radius: 0.5rem;
 
     /* Custom construction theme colors */
-    --construction-yellow: 47 100% 49%;
+    --construction-yellow: 42 96% 50%;
     --construction-black: 0 0% 0%;
     --construction-gray: 0 0% 18%;
-    --construction-light: 0 0% 96%;
+    --construction-light: 0 0% 100%;
     
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(0 0% 0% / 0.9), hsl(0 0% 18% / 0.85));
@@ -55,7 +56,7 @@ All colors MUST be HSL.
     
     /* Shadows */
     --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.08);
-    --shadow-hover: 0 8px 30px hsl(47 100% 49% / 0.15);
+    --shadow-hover: 0 8px 30px hsl(42 96% 50% / 0.12);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -101,3 +102,10 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* Navbar active underline: when a link has aria-current="page" make the underline full width */
+.navbar .nav-link[aria-current="page"] .nav-underline {
+  width: 100%;
+}
+
+/* Small visual lift on hover for nav links already handled via Tailwind classes in component */
